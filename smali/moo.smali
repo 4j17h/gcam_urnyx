@@ -1007,6 +1007,25 @@
 
 .method public final isInvertedAux()Z
     .locals 2
+    sget-object v1, Landroid/os/Build;->DEVICE:Ljava/lang/String;
+
+    const-string v0, "RMX1931"
+
+    invoke-virtual {v1, v0}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+
+    move-result v1
+
+    if-nez v1, :cond_0
+
+    sget-object v1, Landroid/os/Build;->MANUFACTURER:Ljava/lang/String;
+
+    const-string v0, "realme"
+
+    invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-nez v1, :cond_0
 
     sget-object v1, Landroid/os/Build;->MANUFACTURER:Ljava/lang/String;
 
